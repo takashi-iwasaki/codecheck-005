@@ -55,7 +55,7 @@ public class App {
 
 					}
 				}
-				System.out.println("003")
+				System.out.println("003");
 				if (addKey != 0) {
 					finalSummonList.setSummon(keyMap.get(addKey));
 					keyMap.remove(addKey);
