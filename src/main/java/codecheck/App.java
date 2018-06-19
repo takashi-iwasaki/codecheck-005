@@ -47,18 +47,21 @@ public class App {
 
 			for (int nKey : keyMap.keySet()) {
 				if (addKey == 0) {
-					if (finalSummonList.getAllCost() + keyMap.get(addKey).getCost() == tmpCost) {
+					if (finalSummonList.getAllCost() + keyMap.get(addKey).getCost() <= allCost) {
 						addKey = nKey;
 					}
 				} else if (keyMap.get(nKey).getPaformance() > keyMap.get(addKey).getPaformance()) {
-					if (finalSummonList.getAllCost() + keyMap.get(addKey).getCost() == tmpCost) {
+					if (finalSummonList.getAllCost() + keyMap.get(addKey).getCost() <= allCost) {
 						addKey = nKey;
 					}
 
 				}
 			}
-			finalSummonList.setSummon(keyMap.get(addKey));
-			keyMap.remove(addKey);
+			if (addKey != 0) {
+				finalSummonList.setSummon(keyMap.get(addKey));
+				keyMap.remove(addKey);
+			}
+
 			if (finalSummonList.getAllCost() == tmpCost) {
 				break;
 			}
