@@ -50,11 +50,11 @@ public class App {
 				System.out.println("002");
 				for (int nKey : keyMap.keySet()) {
 					if (addKey == 0) {
-						if (finalSummonList.getAllCost() + keyMap.get(addKey).getCost() <= allCost) {
+						if (finalSummonList.getAllCost() + keyMap.get(nKey).getCost() <= allCost) {
 							addKey = nKey;
 						}
 					} else if (keyMap.get(nKey).getPaformance() > keyMap.get(addKey).getPaformance()) {
-						if (finalSummonList.getAllCost() + keyMap.get(addKey).getCost() <= allCost) {
+						if (finalSummonList.getAllCost() + keyMap.get(nKey).getCost() <= allCost) {
 							addKey = nKey;
 						}
 
