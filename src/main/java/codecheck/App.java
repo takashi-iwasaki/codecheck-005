@@ -71,7 +71,7 @@ public class App {
 			System.out.println(finalSummonList.getAllPower());
 
 		} catch (Exception e) {
-			System.out.println(e.getStackTrace());
+			System.out.println(e.getStackTrace().toString());
 		}
 
 	}
