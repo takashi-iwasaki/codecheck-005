@@ -19,13 +19,15 @@ public class App {
 		//引数処理
 		try {
 			System.out.println("005");
+			System.out.println(args[0]);
+			System.out.println(args[1]);
 			int allCards = Integer.parseInt(args[0]);
 			int allCost = Integer.parseInt(args[1]);
 			System.out.println("007");
 			//連番で格納
 			Map<Integer, Summon> keyMap = new HashMap<>();
 
-			//総火力キーap<>();
+			//総火力キー
 			SummonList finalSummonList = new SummonList();
 
 			for (int y = 1; y <= allCards; y++) {
