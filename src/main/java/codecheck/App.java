@@ -23,10 +23,8 @@ public class App {
 
 			//連番で格納
 			Map<Integer, Summon> keyMap = new HashMap<>();
-			Map<Integer, Map<Double, Summon>> keyMapList = new HashMap<>();
 
-			//総火力キー
-			Map<Integer, SummonList> AllKeyMap = new HashMap<>();
+			//総火力キーap<>();
 			SummonList finalSummonList = new SummonList();
 
 			for (int y = 1; y <= allCards; y++) {
@@ -35,7 +33,7 @@ public class App {
 				tmpSummon.setCost(Integer.parseInt(args[y * 2 + 1]));
 				keyMap.put(y, tmpSummon);
 			}
-
+			System.out.println("001");
 			while (true) {
 				// キーでソート
 				Object[] mapkey = keyMap.keySet().toArray();
@@ -44,7 +42,7 @@ public class App {
 				int addKey = 0;
 
 				int tmpCost = finalSummonList.getAllCost();
-
+				System.out.println("002");
 				for (int nKey : keyMap.keySet()) {
 					if (addKey == 0) {
 						if (finalSummonList.getAllCost() + keyMap.get(addKey).getCost() <= allCost) {
@@ -57,12 +55,13 @@ public class App {
 
 					}
 				}
+				System.out.println("003")
 				if (addKey != 0) {
 					finalSummonList.setSummon(keyMap.get(addKey));
 					keyMap.remove(addKey);
 				}
 
-				if (finalSummonList.getAllCost() == tmpCost) {
+				if (finalSummonList.getAllCost() == tmpCost || keyMap.isEmpty()) {
 					break;
 				}
 
