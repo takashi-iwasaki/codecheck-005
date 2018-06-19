@@ -11,10 +11,10 @@ public class App {
 		//とりあえず組み合わせ格納
 
 		//引数2個未満はエラー
-		if (args.length <= 2) {
-			System.out.println("Error01!");
-			return;
-		}
+		//if (args.length < 2) {
+		//	System.out.println("Error01!");
+		//	return;
+		//}
 
 		//引数処理
 
