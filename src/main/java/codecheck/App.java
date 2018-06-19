@@ -18,13 +18,13 @@ public class App {
 
 		//引数処理
 		try {
-			System.out.println("005");
+			//System.out.println("005");
 			String[] paramList = args[0].split(" ");
-			System.out.println(paramList[0]);
-			System.out.println(paramList[1]);
+			//System.out.println(paramList[0]);
+			//System.out.println(paramList[1]);
 			int allCards = Integer.parseInt(paramList[0]);
 			int allCost = Integer.parseInt(paramList[1]);
-			System.out.println("007");
+			//System.out.println("007");
 			//連番で格納
 			Map<Integer, Summon> keyMap = new HashMap<>();
 
@@ -32,13 +32,13 @@ public class App {
 			SummonList finalSummonList = new SummonList();
 
 			for (int y = 1; y <= allCards; y++) {
-				System.out.println("006");
+				//System.out.println("006");
 				Summon tmpSummon = new Summon();
 				tmpSummon.setPower(Integer.parseInt(paramList[y * 2]));
 				tmpSummon.setCost(Integer.parseInt(paramList[y * 2 + 1]));
 				keyMap.put(y, tmpSummon);
 			}
-			System.out.println("001");
+			//System.out.println("001");
 			while (true) {
 				// キーでソート
 				Object[] mapkey = keyMap.keySet().toArray();
@@ -47,7 +47,7 @@ public class App {
 				int addKey = 0;
 
 				int tmpCost = finalSummonList.getAllCost();
-				System.out.println("002");
+				//System.out.println("002");
 				for (int nKey : keyMap.keySet()) {
 					if (addKey == 0) {
 						if (finalSummonList.getAllCost() + keyMap.get(nKey).getCost() <= allCost) {
@@ -60,7 +60,7 @@ public class App {
 
 					}
 				}
-				System.out.println("003");
+				//System.out.println("003");
 				if (addKey != 0) {
 					finalSummonList.setSummon(keyMap.get(addKey));
 					keyMap.remove(addKey);
