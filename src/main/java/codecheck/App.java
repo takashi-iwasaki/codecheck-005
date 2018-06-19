@@ -19,10 +19,11 @@ public class App {
 		//引数処理
 		try {
 			System.out.println("005");
-			System.out.println(args[0]);
-			System.out.println(args[1]);
-			int allCards = Integer.parseInt(args[0]);
-			int allCost = Integer.parseInt(args[1]);
+			String[] paramList = args[0].split(" ");
+			System.out.println(paramList[0]);
+			System.out.println(paramList[1]);
+			int allCards = Integer.parseInt(paramList[0]);
+			int allCost = Integer.parseInt(paramList[1]);
 			System.out.println("007");
 			//連番で格納
 			Map<Integer, Summon> keyMap = new HashMap<>();
@@ -33,8 +34,8 @@ public class App {
 			for (int y = 1; y <= allCards; y++) {
 				System.out.println("006");
 				Summon tmpSummon = new Summon();
-				tmpSummon.setPower(Integer.parseInt(args[y * 2]));
-				tmpSummon.setCost(Integer.parseInt(args[y * 2 + 1]));
+				tmpSummon.setPower(Integer.parseInt(paramList[y * 2]));
+				tmpSummon.setCost(Integer.parseInt(paramList[y * 2 + 1]));
 				keyMap.put(y, tmpSummon);
 			}
 			System.out.println("001");
